@@ -3,162 +3,366 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adobe Ridge Systems LLC</title>
-  <meta name="description" content="Industrial control electronics for critical infrastructure. Initial deployment focus: water and wastewater." />
+  <title>Adobe Ridge Systems LLC — Lender Overview</title>
+  <meta name="description" content="Adobe Ridge Systems LLC builds industrial control electronics for critical infrastructure. Initial deployment focus: wastewater treatment facilities." />
+
   <style>
-    :root { color-scheme: light; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 56px 20px; }
-    h1 { font-size: 2.1rem; margin: 0 0 6px; }
-    .tagline { font-weight: 600; margin: 0 0 22px; }
-    hr { border: 0; border-top: 1px solid #ddd; margin: 28px 0; }
-    h2 { font-size: 1.25rem; margin: 26px 0 10px; }
-    ul { margin: 8px 0 0 20px; }
-    li { margin: 6px 0; }
-    .muted { color: #333; }
-    .box { border: 1px solid #e3e3e3; border-radius: 12px; padding: 14px 16px; background: #fafafa; }
-    .contact a { color: inherit; text-decoration: none; border-bottom: 1px solid #bbb; }
-    .contact a:hover { border-bottom-color: #000; }
-    footer { margin-top: 34px; font-size: 0.9rem; color: #444; }
+    :root{
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: #e5e7eb;
+      --accent: #1f2937;
+      --accent2: #0f172a;
+      --soft: #eef2ff;
+      --soft2: #ecfeff;
+      --shadow: 0 10px 30px rgba(17,24,39,0.08);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1000px 600px at 15% 10%, #eef2ff 0%, rgba(238,242,255,0) 55%),
+                  radial-gradient(900px 500px at 85% 0%, #ecfeff 0%, rgba(236,254,255,0) 60%),
+                  var(--bg);
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 44px 18px 64px; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; margin-bottom: 18px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .mark {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, #111827, #334155);
+      box-shadow: 0 8px 18px rgba(17,24,39,0.18);
+    }
+    .brand h1 {
+      font-size: 1.15rem; margin: 0; letter-spacing: 0.2px;
+    }
+    .brand p { margin: 2px 0 0; color: var(--muted); font-size: 0.92rem; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.65);
+      border: 1px solid rgba(229,231,235,0.9);
+      backdrop-filter: blur(8px);
+      font-size: 0.92rem; color: var(--muted);
+    }
+    .hero {
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.84));
+      border: 1px solid rgba(229,231,235,0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 22px;
+      margin-bottom: 18px;
+    }
+    .hero h2 { margin: 0 0 8px; font-size: 1.55rem; letter-spacing: -0.2px; }
+    .hero .sub {
+      margin: 0;
+      color: var(--muted);
+      max-width: 78ch;
+      font-size: 1.02rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 920px){
+      .grid{ grid-template-columns: 1fr; }
+      .pill{ justify-content: center; width: 100%; }
+      .topbar{ flex-direction: column; align-items: flex-start; }
+    }
+    .card {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(229,231,235,0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 18px;
+    }
+    .card h3 { margin: 0 0 10px; font-size: 1.1rem; }
+    .muted { color: var(--muted); }
+    .divider { height: 1px; background: var(--line); margin: 14px 0; }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 6px 0; color: var(--text); }
+    .callout {
+      background: linear-gradient(180deg, rgba(238,242,255,0.75), rgba(236,254,255,0.55));
+      border: 1px solid rgba(229,231,235,0.9);
+      border-radius: 14px;
+      padding: 14px 14px;
+      margin-top: 12px;
+    }
+    .callout strong { color: var(--accent2); }
+    .kpi {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+      margin-top: 10px;
+    }
+    .kpi .box {
+      border: 1px solid rgba(229,231,235,0.9);
+      border-radius: 14px;
+      padding: 12px 12px;
+      background: rgba(255,255,255,0.75);
+    }
+    .kpi .label { font-size: 0.84rem; color: var(--muted); margin: 0 0 4px; }
+    .kpi .value { margin: 0; font-weight: 650; }
+    .section-title {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      margin: 0 0 8px;
+    }
+    .tag {
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,0.9);
+      background: rgba(255,255,255,0.7);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .contact a {
+      text-decoration: none;
+      border-bottom: 1px solid rgba(17,24,39,0.25);
+    }
+    .contact a:hover { border-bottom-color: rgba(17,24,39,0.65); }
+    footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .fineprint {
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
   </style>
 </head>
+
 <body>
-  <main class="wrap">
-    <h1>Adobe Ridge Systems LLC</h1>
-    <p class="tagline">Industrial Control Electronics • Designed for Critical Infrastructure</p>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <h1>Adobe Ridge Systems LLC</h1>
+          <p>Industrial Control Electronics • Designed for Critical Infrastructure</p>
+        </div>
+      </div>
+      <div class="pill" title="Lender-ready overview page">
+        <span>📄</span>
+        <span><strong>Lender & Funding Overview</strong></span>
+      </div>
+    </div>
 
-    <hr />
-
-    <h2>Lender &amp; Funding Overview</h2>
-    <p class="muted">
-      Adobe Ridge Systems LLC is a U.S.-based engineering company developing industrial-grade control electronics for
-      critical infrastructure applications. The company’s initial deployment focus is wastewater and water treatment
-      facilities—an infrastructure segment characterized by long equipment lifecycles, conservative purchasing behavior,
-      and sustained demand driven by regulatory compliance and public necessity.
-    </p>
-    <p class="muted">
-      The company is currently in Engineering Validation (EVT) and early Design Validation (DVT) for its first control
-      platform and is seeking funding to complete validation, pilot deployments, and initial small-batch manufacturing.
-    </p>
-
-    <hr />
-
-    <h2>The Problem</h2>
-    <ul>
-      <li>Critical infrastructure operators—particularly municipal wastewater and water utilities—rely on aging control systems.</li>
-      <li>Systems can be difficult to service or replace, vulnerable to electrical noise and surges, and dependent on long lead times or discontinued components.</li>
-      <li>Many modern replacements prioritize feature density and cost reduction over long-term reliability and field maintainability.</li>
-    </ul>
-
-    <hr />
-
-    <h2>Our Solution</h2>
-    <p class="muted">
-      Adobe Ridge Systems develops hardened industrial control PCBAs designed specifically for long service life,
-      electrical robustness, and field serviceability.
-    </p>
-    <ul>
-      <li>MCU-based architecture using widely supported components</li>
-      <li>Isolated industrial communications (e.g., RS-485 / Modbus)</li>
-      <li>4–20 mA analog input and control interfaces</li>
-      <li>Conservative power design with surge and transient protection</li>
-      <li>Clear test points and documentation for troubleshooting</li>
-    </ul>
-    <p class="muted">
-      The underlying control platform is intentionally designed to support a broader range of infrastructure and
-      industrial automation applications over time.
-    </p>
-
-    <hr />
-
-    <h2>Initial Market Focus</h2>
-    <div class="box">
-      <strong>Primary Deployment Vertical</strong>
-      <ul>
-        <li>Wastewater treatment plants</li>
-        <li>Water treatment facilities</li>
-      </ul>
-      <p class="muted" style="margin:10px 0 0;">
-        Selected due to non-discretionary demand, long asset lifecycles, preference for reliable hardware,
-        and ongoing regulatory/infrastructure investment.
+    <section class="hero">
+      <h2>Precision-engineered control boards for wastewater and beyond</h2>
+      <p class="sub">
+        Adobe Ridge Systems develops industrial-grade control electronics for critical infrastructure where reliability,
+        electrical robustness, and field maintainability are non-negotiable. Our initial deployment focus is
+        <strong>wastewater treatment facilities</strong>, with a platform designed to extend into adjacent infrastructure
+        control applications over time.
       </p>
+
+      <div class="kpi" aria-label="high level summary">
+        <div class="box">
+          <p class="label">Primary deployment vertical</p>
+          <p class="value">Wastewater treatment plants</p>
+        </div>
+        <div class="box">
+          <p class="label">Current stage</p>
+          <p class="value">EVT → early DVT</p>
+        </div>
+      </div>
+
+      <p class="fineprint">
+        This page is intentionally conservative and operationally focused: designed for lenders, underwriters, and
+        infrastructure-aligned partners.
+      </p>
+    </section>
+
+    <div class="grid">
+      <!-- LEFT COLUMN -->
+      <section class="card">
+        <div class="section-title">
+          <h3>Executive Summary</h3>
+          <span class="tag">Company overview</span>
+        </div>
+        <p class="muted">
+          Adobe Ridge Systems LLC is a U.S.-based engineering company developing industrial-grade control electronics for
+          critical infrastructure applications. The initial deployment focus is wastewater (and water) treatment—an
+          infrastructure segment characterized by long equipment lifecycles, conservative procurement, and sustained
+          demand driven by regulatory compliance and public necessity.
+        </p>
+        <p class="muted">
+          The company is in Engineering Validation (EVT) and early Design Validation (DVT) for its first control platform
+          and is seeking funding to complete validation, pilot deployments, and initial small-batch manufacturing.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="section-title">
+          <h3>The Problem</h3>
+          <span class="tag">Operator risk</span>
+        </div>
+        <ul>
+          <li>Aging control systems can be difficult to service or replace.</li>
+          <li>Systems are exposed to electrical noise, surges, and environmental stress.</li>
+          <li>Many replacements prioritize feature density and cost reduction over long-term maintainability.</li>
+          <li>Utilities require predictable 24/7 operation; downtime has outsized consequences.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="section-title">
+          <h3>Our Solution</h3>
+          <span class="tag">Reliability-first</span>
+        </div>
+        <p class="muted">
+          Hardened industrial control PCBAs designed for long service life, electrical robustness, and field serviceability.
+          Key characteristics include:
+        </p>
+        <ul>
+          <li>MCU-based architecture using widely supported components</li>
+          <li>Isolated industrial communications (e.g., RS-485 / Modbus)</li>
+          <li>4–20 mA analog input and control interfaces</li>
+          <li>Conservative power design with surge and transient protection</li>
+          <li>Clear test points and documentation for troubleshooting</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Platform intent:</strong>
+          <span class="muted">
+            the underlying control architecture is designed to be adaptable across adjacent infrastructure use cases without
+            redesigning the core platform.
+          </span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section-title">
+          <h3>Competitive Positioning</h3>
+          <span class="tag">Total cost of ownership</span>
+        </div>
+        <ul>
+          <li>Reliability and uptime over feature quantity</li>
+          <li>Serviceability and documentation</li>
+          <li>Conservative component selection and derating</li>
+          <li>Support expectations aligned with municipal procurement realities</li>
+        </ul>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="card">
+        <div class="section-title">
+          <h3>Market Focus</h3>
+          <span class="tag">Go-to-market</span>
+        </div>
+
+        <div class="callout">
+          <strong>Initial Deployment Focus</strong>
+          <ul style="margin-top:8px;">
+            <li>Wastewater treatment facilities</li>
+            <li>Water treatment facilities</li>
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section-title">
+          <h3>Adjacent Use Cases</h3>
+          <span class="tag">Design-compatible</span>
+        </div>
+        <p class="muted">
+          These are not “promised products.” They represent adjacent scenarios that share the same requirements:
+          electrical robustness, long service life, and field maintainability.
+        </p>
+        <ul>
+          <li>Pump and lift station control</li>
+          <li>Remote monitoring and telemetry systems</li>
+          <li>Industrial process supervision</li>
+          <li>Infrastructure-focused OEM control subsystems</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="section-title">
+          <h3>Current Phase & Milestones</h3>
+          <span class="tag">Execution</span>
+        </div>
+        <div class="callout">
+          <strong>Current Status</strong>
+          <ul style="margin-top:8px;">
+            <li>Engineering Validation (EVT)</li>
+            <li>Early Design Validation (DVT)</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <strong>Near-Term Milestones (Post-Funding)</strong>
+          <ul style="margin-top:8px;">
+            <li>Complete DVT</li>
+            <li>Pilot deployments with selected operators/integrators</li>
+            <li>Small-batch manufacturing</li>
+            <li>Incorporate field feedback</li>
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section-title">
+          <h3>Funding Use (High-Level)</h3>
+          <span class="tag">Capital deployment</span>
+        </div>
+        <ul>
+          <li>Final validation and testing</li>
+          <li>Compliance / pre-certification activities (as applicable)</li>
+          <li>Initial manufacturing runs</li>
+          <li>Documentation and deployment readiness</li>
+        </ul>
+        <p class="muted" style="margin-top:10px;">
+          Detailed financials, budgets, and timelines are available upon request.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="section-title">
+          <h3>Company Profile</h3>
+          <span class="tag">At-a-glance</span>
+        </div>
+        <ul>
+          <li><strong>Legal Entity:</strong> Adobe Ridge Systems LLC</li>
+          <li><strong>Location:</strong> United States</li>
+          <li><strong>Stage:</strong> Pre-revenue / Validation</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="section-title">
+          <h3>Contact</h3>
+          <span class="tag">Direct</span>
+        </div>
+        <p class="contact">
+          <strong>Business &amp; Funding:</strong><br />
+          <a href="mailto:info@adoberidgesystems.com">info@adoberidgesystems.com</a>
+        </p>
+        <p class="contact" style="margin-top:10px;">
+          <strong>Engineering:</strong><br />
+          <a href="mailto:engineering@adoberidgesystems.com">engineering@adoberidgesystems.com</a>
+        </p>
+      </aside>
     </div>
 
-    <hr />
-
-    <h2>Platform Expansion Potential</h2>
-    <p class="muted">
-      Adobe Ridge Systems follows a platform-first engineering approach: a common, hardened control architecture adapted
-      to specific operational environments. Expansion into adjacent applications leverages the same core design,
-      reducing development risk and capital requirements.
-    </p>
-    <ul>
-      <li>Pump and lift station control</li>
-      <li>Remote monitoring and telemetry systems</li>
-      <li>Industrial process supervision</li>
-      <li>Infrastructure-focused OEM control subsystems</li>
-    </ul>
-
-    <hr />
-
-    <h2>Competitive Positioning</h2>
-    <ul>
-      <li>Reliability and uptime over feature quantity</li>
-      <li>Serviceability and documentation</li>
-      <li>Conservative component selection and derating</li>
-      <li>Long-term support expectations aligned with infrastructure operators</li>
-    </ul>
-
-    <hr />
-
-    <h2>Current Phase &amp; Milestones</h2>
-    <div class="box">
-      <strong>Current Status</strong>
-      <ul>
-        <li>Engineering Validation (EVT)</li>
-        <li>Early Design Validation (DVT)</li>
-      </ul>
-      <strong>Near-Term Milestones (Post-Funding)</strong>
-      <ul>
-        <li>Completion of DVT</li>
-        <li>Pilot deployments with selected operators or integrators</li>
-        <li>Small-batch manufacturing</li>
-        <li>Field feedback incorporation</li>
-      </ul>
-    </div>
-
-    <hr />
-
-    <h2>Funding Use (High-Level)</h2>
-    <ul>
-      <li>Final hardware validation and testing</li>
-      <li>Compliance and pre-certification activities (as applicable)</li>
-      <li>Initial manufacturing runs</li>
-      <li>Documentation and deployment readiness</li>
-    </ul>
-    <p class="muted">Detailed financials, budgets, and timelines are available upon request.</p>
-
-    <hr />
-
-    <h2>Company Profile</h2>
-    <ul>
-      <li><strong>Legal Entity:</strong> Adobe Ridge Systems LLC</li>
-      <li><strong>Location:</strong> United States</li>
-      <li><strong>Focus:</strong> Industrial control electronics for critical infrastructure</li>
-      <li><strong>Stage:</strong> Pre-revenue / Validation stage</li>
-    </ul>
-
-    <hr />
-
-    <h2>Contact</h2>
-    <p class="contact">
-      <strong>Business &amp; Funding Inquiries:</strong>
-      <a href="mailto:info@adoberidgesystems.com">info@adoberidgesystems.com</a><br/>
-      <strong>Engineering &amp; Technical Discussions:</strong>
-      <a href="mailto:engineering@adoberidgesystems.com">engineering@adoberidgesystems.com</a>
-    </p>
-
-    <footer>© Adobe Ridge Systems LLC. All rights reserved.</footer>
-  </main>
+    <footer>
+      © Adobe Ridge Systems LLC. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
