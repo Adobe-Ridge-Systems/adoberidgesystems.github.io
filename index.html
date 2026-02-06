@@ -358,11 +358,12 @@
         </div>
         <p class="contact">
           <strong>Business &amp; Funding:</strong><br />
-          <a href="mailto:info@adoberidgesystems.com">info@adoberidgesystems.com</a>
+          <span class="email" data-user="info" data-domain="adoberidgesystems.com"></span>
+a href="mailto:info@adoberidgesystems.com">info@adoberidgesystems.com</a>
         </p>
         <p class="contact" style="margin-top:10px;">
           <strong>Engineering:</strong><br />
-          <a href="mailto:engineering@adoberidgesystems.com">engineering@adoberidgesystems.com</a>
+          <span class="email" data-user="engineering" data-domain="adoberidgesystems.com"></span>
         </p>
       </aside>
     </div>
@@ -371,5 +372,20 @@
       © Adobe Ridge Systems LLC. All rights reserved.
     </footer>
   </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".email").forEach(function (el) {
+      const user = el.getAttribute("data-user");
+      const domain = el.getAttribute("data-domain");
+      const address = user + "@" + domain;
+
+      const link = document.createElement("a");
+      link.href = "mailto:" + address;
+      link.textContent = address;
+
+      el.appendChild(link);
+    });
+  });
+</script>
 </body>
 </html>
