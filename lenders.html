@@ -255,16 +255,21 @@
 
   <h3>Contact &amp; Next Steps</h3>
 
-  <p class="small">
-    <strong>Primary Contact</strong><br/>
-    Adobe Ridge Systems LLC<br/>
-    <a href="mailto:info@adoberidgesystems.com">info@adoberidgesystems.com</a>
-  </p>
+ <p class="small">
+  <strong>Primary Contact</strong><br/>
+  Adobe Ridge Systems LLC<br/>
+  <span class="email" data-user="info" data-domain="adoberidgesystems.com">
+    info [at] adoberidgesystems [dot] com
+  </span>
+</p>
 
-  <p class="small" style="margin-top:10px;">
-    <strong>Engineering &amp; Technical Review</strong><br/>
-    <a href="mailto:engineering@adoberidgesystems.com">engineering@adoberidgesystems.com</a>
-  </p>
+<p class="small" style="margin-top:10px;">
+  <strong>Engineering &amp; Technical Review</strong><br/>
+  <span class="email" data-user="engineering" data-domain="adoberidgesystems.com">
+    engineering [at] adoberidgesystems [dot] com
+  </span>
+</p>
+
 
   <div class="divider"></div>
 
@@ -276,4 +281,25 @@
   </ul>
 </section>
 Adobe Ridge Systems LLC is a U.S.-based engineering company focused on industrial control electronics for critical infrastructure.
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".email").forEach(function (el) {
+      const user = el.getAttribute("data-user");
+      const domain = el.getAttribute("data-domain");
+      const address = user + "@" + domain;
 
+      const link = document.createElement("a");
+      link.href = "mailto:" + address;
+      link.textContent = address;
+
+      el.textContent = "";
+      el.appendChild(link);
+    });
+  });
+</script>
+
+</body>
+</html>
+  </body>
+</html>
